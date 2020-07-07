@@ -36,5 +36,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Auto Sign In
       run: |
-        chmod +x ./Spider/baidutieba_signin.py
-        ./Spider/baidutieba_signin.py HcxflctbEhaY3dofmVSc2VjUjZsOVVCMXBEY0tyMGVxeXpIU1NKfjZhbURGVUplRVFBQUFBJCQAAAAAAAAAAAEAAAAHEfl-zOzPwm1idQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIOIGl6DiBpea
+        ls
+        chmod +x ./Spiders/baidutieba_signin.py
+        ./Spiders/baidutieba_signin.py HcxflctbEhaY3dofmVSc2VjUjZsOVVCMXBEY0tyMGVxeXpIU1NKfjZhbURGVUplRVFBQUFBJCQAAAAAAAAAAAEAAAAHEfl-zOzPwm1idQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIOIGl6DiBpea
