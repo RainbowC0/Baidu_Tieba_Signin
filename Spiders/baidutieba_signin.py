@@ -1,7 +1,6 @@
-# !/user/bin/env python
+# !/usr/bin/env python
 # -*- coding:utf-8 -*- 
 # time: 2018/2/27--19:24
-__author__ = 'Henry'
 
 '''
 项目:百度贴吧一键签到
