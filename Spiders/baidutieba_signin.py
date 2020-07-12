@@ -27,7 +27,7 @@ def signin():
     num = 0
     for i in tieba:
         #i = i.replace('\\\\', '\\').encode('latin-1').decode('unicode_escape')
-        url = 'http://tieba.baidu.com/sign/add'
+        url = 'https://tieba.baidu.com/sign/add'
         form = {'ie': 'utf-8',
                 'kw': i,  # 要签到的贴吧名
                 'tbs': '7dc070643ef556f71594255318'}
@@ -35,10 +35,10 @@ def signin():
         if html['no'] == 1101:
             print('[' + i + '吧]:' + '亲，此贴吧您之前已经签过了哦!')
         if html['error'] == '' or html['no'] == 0:
-            print('[' + i + '吧]:' + '签到成功! 经验+'+str(html['cont_sign_num']))
+            print('[' + i + '吧]:' + '签到成功! 经验+'+str(html['data']['uinfo']['cont_sign_num']))
             num += 1
     print('\n')
-    print('恭喜您,贴吧签到成功!一共签到' + str(num) + '个贴吧!')
+    print('恭喜您,贴吧签到成功! 一共签到' + str(num) + '个贴吧!')
 
 
 if __name__ == '__main__':
