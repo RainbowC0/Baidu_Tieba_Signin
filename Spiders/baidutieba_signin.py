@@ -26,7 +26,7 @@ def signin():
     print('正在进行贴吧签到...')
     num = 0
     for i in tieba:
-        i = i.replace('\\\\', '\\').encode('latin-1').decode('unicode_escape')
+        #i = i.replace('\\\\', '\\').encode('latin-1').decode('unicode_escape')
         url = 'http://tieba.baidu.com/sign/add'
         form = {'ie': 'utf-8',
                 'kw': i,  # 要签到的贴吧名
