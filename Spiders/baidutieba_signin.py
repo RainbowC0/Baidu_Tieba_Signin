@@ -35,7 +35,7 @@ def signin():
         if html['no'] == 1101:
             print('[' + i + '吧]:' + '亲，此贴吧您之前已经签过了哦!')
         if html['error'] == '' or html['no'] == 0:
-            print('[' + i + '吧]:' + '签到成功! 经验+'+str(html['data']['uinfo']['cont_sign_num']))
+            print('[' + i + '吧]:' + '签到成功!')
             num += 1
     print('\n')
     print('恭喜您,贴吧签到成功! 一共签到' + str(num) + '个贴吧!')
