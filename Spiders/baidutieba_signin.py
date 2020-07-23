@@ -46,7 +46,7 @@ def signin():
     for i in html["data"]["like_forum"]:
         url = 'http://c.tieba.baidu.com/c/c/forum/sign'
         form = {
-        "BDUSS":str(BDUSS[1]),
+        "BDUSS":BDUSS.group(1),
         "_client_id":"wappc_1595418910913_863",
         "_client_type":"2",
         "_client_version":"9.1.0.0",
