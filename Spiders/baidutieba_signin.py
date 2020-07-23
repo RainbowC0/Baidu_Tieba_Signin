@@ -31,8 +31,6 @@ def signin():
     print('*' * 30 + '百度贴吧签到小助手' + '*' * 30)
     cookie = sys.argv[1]
     BDUSS = re.search(r"BDUSS=([0-9A-Za-z~\\-]*);",cookie)
-    print(cookie)
-    print(BDUSS[0])
     #input('请输入您登录百度贴吧后获取的Cookie值:')
     url = 'https://tieba.baidu.com/mo/q/newmoindex'
     headers = {
