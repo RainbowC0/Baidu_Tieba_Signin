@@ -31,7 +31,6 @@ def signin():
     print('*' * 30 + '百度贴吧签到小助手' + '*' * 30)
     cookie = sys.argv[1]
     BDUSS = re.search(r"BDUSS=([0-9A-Za-z~\\-]*);",cookie)
-    #input('请输入您登录百度贴吧后获取的Cookie值:')
     url = 'https://tieba.baidu.com/mo/q/newmoindex'
     headers = {
         'Cookie': cookie,
@@ -59,7 +58,6 @@ def signin():
         d=parse.urlencode(d)
         d=d.encode("utf-8")
         htm = requests.post(url,data=d, headers=headers).json()
-        print(htm)
         if htm['error_code'] == '160002':
             print('[' + i["forum_name"] + '吧]:' + '亲，此贴吧您之前已经签过了哦!')
         if htm['error_code'] == '0':
