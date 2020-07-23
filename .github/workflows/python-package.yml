@@ -4,12 +4,12 @@
 name: Tieba Sign In Automatically
 
 on:
-  #push:
-   # branches: [ master ]
- # pull_request:
-   # branches: [ master ]
-  schedule:
-    - cron: '0 12 * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  #schedule:
+   # - cron: '0 13 * * *'
 
 jobs:
   build:
