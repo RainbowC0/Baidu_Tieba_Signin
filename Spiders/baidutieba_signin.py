@@ -30,7 +30,7 @@ def encodeData(data):
 def signin():
     print('*' * 30 + '百度贴吧签到小助手' + '*' * 30)
     cookie = sys.argv[1]
-    bduss = re.search(r"BDUSS=([0-9A-Za-z~\\-]*);",cookie)
+    BDUSS = re.search(r"BDUSS=([0-9A-Za-z~\\-]*);",cookie)
     #input('请输入您登录百度贴吧后获取的Cookie值:')
     url = 'https://tieba.baidu.com/mo/q/newmoindex'
     headers = {
@@ -45,7 +45,7 @@ def signin():
     for i in html["data"]["like_forum"]:
         url = 'http://c.tieba.baidu.com/c/c/forum/sign'
         form = {
-        "BDUSS":bduss[1],
+        "BDUSS":BDUSS[1],
         "_client_id":"wappc_1595418910913_863",
         "_client_type":"2",
         "_client_version":"9.1.0.0",
