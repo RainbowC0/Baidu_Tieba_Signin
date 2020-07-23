@@ -31,6 +31,7 @@ def signin():
     print('*' * 30 + '百度贴吧签到小助手' + '*' * 30)
     cookie = sys.argv[1]
     BDUSS = re.search(r"BDUSS=([0-9A-Za-z~\\-]*);",cookie)
+    print(BDUSS[1])
     #input('请输入您登录百度贴吧后获取的Cookie值:')
     url = 'https://tieba.baidu.com/mo/q/newmoindex'
     headers = {
@@ -39,13 +40,12 @@ def signin():
         #'Mozilla/5.0 (Linux; Android 5.1; OPPO R7s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36 tieba/9.1.0.0 subType/mini'
     }
     html = requests.get(url, headers=headers).json()
-    print(html)
     print('正在进行贴吧签到...')
     num = 0
     for i in html["data"]["like_forum"]:
         url = 'http://c.tieba.baidu.com/c/c/forum/sign'
         form = {
-        "BDUSS":BDUSS[1],
+        "BDUSS":str(BDUSS[1]),
         "_client_id":"wappc_1595418910913_863",
         "_client_type":"2",
         "_client_version":"9.1.0.0",
@@ -64,7 +64,7 @@ def signin():
         if htm['error_code'] == '160002':
             print('[' + i["forum_name"] + '吧]:' + '亲，此贴吧您之前已经签过了哦!')
         if htm['error_code'] == '0':
-            print('[' + str(i["forum_name"]) + '吧]:' + '签到成功! 经验+'+htm['user_info']['sign_bonus_point'])
+            print('[' + i["forum_name"] + '吧]:' + '签到成功! 经验+'+htm['user_info']['sign_bonus_point'])
             num += 1
     print('\n')
     print('恭喜您,贴吧签到成功!一共签到' + str(num) + '个贴吧!')
