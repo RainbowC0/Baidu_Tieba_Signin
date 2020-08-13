@@ -19,7 +19,7 @@ def signin():
         'Cookie': cookie,
         'User-Agent':'Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3764.0 Mobile Safari/537.36'
     }
-    html = requests.get(url, headers=headers).text
+    html = requests.get(url, headers=headers)
     print(html)
 
 if __name__ == '__main__':
