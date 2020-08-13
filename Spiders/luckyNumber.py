@@ -21,6 +21,7 @@ def signin():
 			break;
 	print(lki)
 	form = re.sub('luckyNumber=[1-9]','luckyNumber='+str(lki),sys.argv[1])
+        print(form)
 	rlt = requests.post(url,data=form,headers=headers).json()
 	print(rlt['status'])
 
