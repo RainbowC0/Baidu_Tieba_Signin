@@ -42,3 +42,4 @@ jobs:
         python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
         python Spiders/bs.py ${{ secrets.BI_COOKIE}}
         python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE}}
+        python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
