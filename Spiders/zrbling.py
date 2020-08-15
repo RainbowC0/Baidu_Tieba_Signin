@@ -8,6 +8,7 @@ def signin():
 	print('*' * 30 + '众人帮每日自动打卡' + '*' * 30)
 	cookie = sys.argv[3]
 	url = 'https://c.29592.net/api/units/LingDailyBonus'
+	url2='https://m.zrb.net/api/units/LingDailyBonus'
 	headers = {
 		'Cookie': cookie,
 		'User-Agent':'Mozilla/5.0 (Linux; Android 5.1; OPPO R7s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36 Html5Plus/1.0',
@@ -16,8 +17,14 @@ def signin():
 	form = {'account':sys.argv[1],'password':sys.argv[2]}
 	#d=parse.urlencode(d)
 	#d=d.encode("utf-8")
-	rlt = requests.post(url,data=form,headers=headers).json();
-	print(rlt['msg'])
+	rlt = requests.post(url,data=form,headers=headers).json()
+	print(rlt)
+	rlt=requests.post(url,data=form,headers=headers).json()
+	print(rlt)
+	rlt=requests.post(url2,data=form,headers=headers).json()
+	print(rlt)
+	rlt=requests.post(url2,data=form,headers=headers).json()
+	print(rlt)
 
 if __name__ == '__main__':
 	signin()
