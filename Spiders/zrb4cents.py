@@ -20,12 +20,12 @@ def signin():
 	print(dir(browser))
 	browser.get(url)
 	n=0
-	WebDriverWait(browser,10).until(browser.current_url.index('mp.weixin.qq.com')!=-1)
-	while browser.current_url.index('cpu.baidu.com')!=-1:
+	WebDriverWait(browser,10).until(browser.current_url.find('mp.weixin.qq.com')!=-1)
+	while browser.current_url.find('cpu.baidu.com')!=-1:
 		srs=browser.page_source
 		print(srs)
 		browser.back()
-		WebDriverWait(browser,10).until(browser.current_url.index('upread.ccdy.cn')==-1)
+		WebDriverWait(browser,10).until(browser.current_url.find('upread.ccdy.cn')==-1)
 		n+=1
 	browser.close()
 	print(n)
