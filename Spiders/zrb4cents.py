@@ -22,6 +22,7 @@ def signin():
 	print(dir(browser))
 	browser.get(url)
 	srs=browser.page_source
+	print(srs)
 	browser.close()
 
 if __name__ == '__main__':
