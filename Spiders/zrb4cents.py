@@ -27,7 +27,6 @@ def signin():
 	profile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', 'false')
 	profile.set_preference('general.useragent.override',ua)
 	browser = webdriver.Firefox(options=options,firefox_profile = profile)
-	print(dir(browser))
 	browser.get(url)
 	n=0
 	WebDriverWait(browser,5).until(EC.url_contains('mp.weixin.qq.com'))
@@ -37,9 +36,9 @@ def signin():
 		browser.back()
 		WebDriverWait(browser,10).until(urlupread)
 		n+=1
-	WebDriverWait(browser,5).until(hasbody)
-	browser.close()
+	print(browser.page_source)
 	print(n)
+	browser.close()
 
 if __name__ == '__main__':
 	signin()
