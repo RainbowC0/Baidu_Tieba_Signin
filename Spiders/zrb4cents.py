@@ -30,7 +30,7 @@ def signin():
 	print(dir(browser))
 	browser.get(url)
 	n=0
-	WebDriverWait(browser,5).until(EC.url_contains('m.weixin.qq.com'))
+	WebDriverWait(browser,5).until(EC.url_contains('mp.weixin.qq.com'))
 	while browser.current_url.find('cpu.baidu.com')==-1:
 		srs=browser.page_source
 		print(srs)
