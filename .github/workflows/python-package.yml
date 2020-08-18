@@ -41,10 +41,10 @@ jobs:
         chmod +x ./Spiders/*
         python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
         python Spiders/bs.py ${{ secrets.BI_COOKIE}}
-        python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE}}
+        python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE }}
         python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
     - name: Install Firefox
       run: |
         sudo apt-get update
         sudo apt-get install firefox firefox-geckodriver
-        python Spiders/zrb4cents.py
+        python Spiders/zrb4cents.py ${{ secrets.ZRB_COOKIE }}
