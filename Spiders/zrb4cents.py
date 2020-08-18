@@ -6,6 +6,14 @@ import sys
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
+def urlupread(dri){
+	return dri.current_url.find('upread.ccdy.cn')==-1
+}
+
+def urlwxqq(dri){
+	return dri.current_url.find('mp.weixin.qq.com')!=-1
+}
+
 def signin():
 	#print('*' * 30 + '幸运冲冲冲每日参与' + '*' * 30)
 	url = 'http://upread.ccdy.cn/lxshow.html?c=8E671739&r='
@@ -20,12 +28,12 @@ def signin():
 	print(dir(browser))
 	browser.get(url)
 	n=0
-	WebDriverWait(browser,10).until(browser.current_url.find('mp.weixin.qq.com')!=-1)
+	WebDriverWait(browser,10).until(urlwxqq)
 	while browser.current_url.find('cpu.baidu.com')!=-1:
 		srs=browser.page_source
 		print(srs)
 		browser.back()
-		WebDriverWait(browser,10).until(browser.current_url.find('upread.ccdy.cn')==-1)
+		WebDriverWait(browser,10).until(urlupread)
 		n+=1
 	browser.close()
 	print(n)
