@@ -4,10 +4,10 @@
 name: Tieba Sign In Automatically
 
 on:
-  #push:
-  #  branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   #schedule:
   #  - cron: '0 12 * * *'
 
@@ -40,10 +40,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install firefox firefox-geckodriver
-    #- name: Auto Sign In
-      #run: |
-        #chmod +x ./Spiders/*
+    - name: Auto Sign In
+      run: |
+        chmod +x ./Spiders/*
         #python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
         #python Spiders/bs.py ${{ secrets.BI_COOKIE}}
         #python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE}}
         #python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
+        python Spiders/zrb4cents.py
