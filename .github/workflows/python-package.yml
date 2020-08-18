@@ -4,12 +4,12 @@
 name: Tieba Sign In Automatically
 
 on:
-  #push:
-  #  branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
-  schedule:
-    - cron: '0 12 * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  #schedule:
+  #  - cron: '0 12 * * *'
 
 jobs:
   build:
@@ -36,10 +36,14 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Auto Sign In
+    - name: Try to install Chrome
       run: |
-        chmod +x ./Spiders/*
-        python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
-        python Spiders/bs.py ${{ secrets.BI_COOKIE}}
-        python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE}}
-        python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
+        sudo apt-get update
+        sudo apt-get install chromium-browser -y
+    #- name: Auto Sign In
+      #run: |
+        #chmod +x ./Spiders/*
+        #python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
+        #python Spiders/bs.py ${{ secrets.BI_COOKIE}}
+        #python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE}}
+        #python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
