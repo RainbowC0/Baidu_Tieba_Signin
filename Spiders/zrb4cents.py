@@ -14,7 +14,7 @@ def urlwxqq(dri):
 	return dri.current_url.find('mp.weixin.qq.com')!=-1 and hasbody(dri)
 
 def hasbody(dri):
-	return len(dri.find_elements_by_class_name('body'))>0
+	return len(dri.find_elements_by_tag_name('body'))>0
 
 def signin():
 	#print('*' * 30 + '幸运冲冲冲每日参与' + '*' * 30)
@@ -35,7 +35,7 @@ def signin():
 		srs=browser.page_source
 		print(len(srs))
 		browser.back()
-		WebDriverWait(browser,5).until(urlupread)
+		WebDriverWait(browser,10).until(urlupread)
 		n+=1
 	WebDriverWait(browser,5).until(hasbody)
 	browser.close()
