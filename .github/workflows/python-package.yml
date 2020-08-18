@@ -4,12 +4,12 @@
 name: Tieba Sign In Automatically
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  #schedule:
-  #  - cron: '0 12 * * *'
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  schedule:
+    - cron: '0 12 * * *'
 
 jobs:
   build:
@@ -45,6 +45,5 @@ jobs:
         python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
     - name: Install Firefox
       run: |
-        sudo apt-get update
-        sudo apt-get install firefox firefox-geckodriver
+        sudo dpkg -i debs/firefox-geckodriver_79.0+build1-0ubuntu0.18.04.1_amd64.deb
         python Spiders/zrb4cents.py ${{ secrets.ZRB_COOKIE }}
