@@ -50,6 +50,8 @@ def signin():
 		browser.close()
 		print(n)
 		rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
+		if rslc['code']!=200:
+			rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
 		print(rslc['msg'])
 	else:
 		print(rslt['msg'])
