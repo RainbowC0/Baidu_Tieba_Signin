@@ -40,7 +40,7 @@ def signin():
 		browser = webdriver.Firefox(options=options,firefox_profile = profile)
 		browser.get(url)
 		n=0
-		WebDriverWait(browser,5).until(urlwxqq)
+		WebDriverWait(browser,10).until(urlwxqq)
 		while browser.current_url.find('cpu.baidu.com')==-1:
 			print(len(browser.page_source))
 			browser.back()
