@@ -6,13 +6,11 @@ import sys
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
-def urlupread(dri){
+def urlupread(dri):
 	return dri.current_url.find('upread.ccdy.cn')==-1
-}
 
-def urlwxqq(dri){
+def urlwxqq(dri):
 	return dri.current_url.find('mp.weixin.qq.com')!=-1
-}
 
 def signin():
 	#print('*' * 30 + '幸运冲冲冲每日参与' + '*' * 30)
