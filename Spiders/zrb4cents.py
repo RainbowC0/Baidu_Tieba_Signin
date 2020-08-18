@@ -45,7 +45,7 @@ def signin():
 		WebDriverWait(browser,5).until(hasbody)
 		browser.close()
 		print(n)
-		rlsc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
+		rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
 		print(rslc['msg'])
 	else:
 		print(rslt['msg'])
