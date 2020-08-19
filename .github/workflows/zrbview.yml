@@ -4,12 +4,12 @@
 name: ZRB View Task 1, 3
 
 on:
-  #push:
-  #  branches: [ master ]
-  #pull_request:
-  #  branches: [ master ]
-  schedule:
-    - cron: '0 8,22 * * *'
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  #schedule:
+  #  - cron: '0 8,22 * * *'
 
 jobs:
   build:
