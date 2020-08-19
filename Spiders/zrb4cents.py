@@ -40,13 +40,13 @@ def signin():
 		browser = webdriver.Firefox(options=options,firefox_profile = profile)
 		browser.get(url)
 		n=0
-		WebDriverWait(browser,10).until(urlwxqq)
+		WebDriverWait(browser,15).until(urlwxqq)
 		while browser.current_url.find('cpu.baidu.com')==-1:
 			print(len(browser.page_source))
 			browser.back()
-			WebDriverWait(browser,10).until(urlupread)
+			WebDriverWait(browser,15).until(urlupread)
 			n+=1
-		WebDriverWait(browser,5).until(hasbody)
+		WebDriverWait(browser,10).until(hasbody)
 		browser.close()
 		print(n)
 		rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
