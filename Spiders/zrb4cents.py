@@ -51,9 +51,11 @@ def signin():
 		WebDriverWait(browser,10).until(hasbody)
 		browser.close()
 		print(n)
+		nn=0
 		rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
-		if rslc['code']!=200:
+		while rslc['code']!=200 and nn<10:
 			rslc=requests.post('https://c.29592.net/next/ViewTaskComplete',headers=headers).json()
+			nn+=1
 		print(rslc['msg'])
 	else:
 		print(rslt['msg'])
