@@ -14,9 +14,11 @@ def signin():
 		'Accept':'application/json'
 	}
 	form = {'account':sys.argv[1],'password':sys.argv[2]}
-	#d=parse.urlencode(d)
-	#d=d.encode("utf-8")
-	rlt = requests.post(url,data=form,headers=headers).json();
+	rlt = requests.post(url,data=form,headers=headers).json()
+	n=0
+	while n<10 and rlt['code']!=200:
+		rlt = requests.post(url,data=form,headers=headers).json()
+		n+=1
 	print(rlt['msg'])
 
 if __name__ == '__main__':
