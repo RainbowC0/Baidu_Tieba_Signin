@@ -17,10 +17,10 @@ def signin():
 	rlt = requests.post(url,data=form,headers=headers).json()
 	print(rlt)
 	n=0
-	while n<10 and (('code' in rlt and rlt['code']!=200 and rlt['code']!=101) or ('coe' in rlt and rlt['coe']!=200 and rlt['coe']!=101)):
+	while n<16:
 		rlt=requests.post(url,data=form,headers=headers).json()
+		print(rlt)
 		n+=1
-	print(rlt)
 
 if __name__ == '__main__':
 	signin()
