@@ -42,8 +42,8 @@ jobs:
         python Spiders/baidutieba_signin.py ${{ secrets.MY_COOKIES }}
         python Spiders/bs.py ${{ secrets.BI_COOKIE}}
         python Spiders/zrbling.py ${{ secrets.ZRB_ACCOUNT }} ${{ secrets.ZRB_PASSWORD }} ${{ secrets.ZRB_COOKIE }}
-        python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
-    - name: Install Firefox
-      run: |
-        sudo dpkg -i debs/firefox-geckodriver_79.0+build1-0ubuntu0.18.04.1_amd64.deb
-        python Spiders/zrb4cents.py ${{ secrets.ZRB_COOKIE }}
+   #     python Spiders/luckyNumber.py ${{ secrets.LUCKYNUMBER_DATA }}
+   # - name: Install Firefox
+   #   run: |
+   #     sudo dpkg -i debs/firefox-geckodriver_79.0+build1-0ubuntu0.18.04.1_amd64.deb
+   #     python Spiders/zrb4cents.py ${{ secrets.ZRB_COOKIE }}
