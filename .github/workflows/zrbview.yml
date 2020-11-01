@@ -38,5 +38,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: ZRB View Task
       run: |
-        sudo dpkg -i debs/firefox-geckodriver_79.0+build1-0ubuntu0.18.04.1_amd64.deb
+        sudo dpkg -i debs/firefox-geckodriver*.deb
         python Spiders/zrb4cents.py ${{ secrets.ZRB_COOKIE }}
